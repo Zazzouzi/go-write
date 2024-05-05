@@ -16,10 +16,6 @@ export default function App() {
  return (
    <NavigationContainer>
      <Stack.Navigator initialRouteName="Welcome">
-       <Stack.Screen name="Welcome" component={WelcomeScreen} />
-       <Stack.Screen name="Name" component={NameScreen} options={{headerTitle: ""}} />
-       <Stack.Screen name="ProfilePicture" component={ProfilePictureScreen} options={{headerTitle: ""}}/>
-       <Stack.Screen name="Journal" component={JournalScreen} options={{headerTitle: ""}}/>
 
      </Stack.Navigator>
    </NavigationContainer>

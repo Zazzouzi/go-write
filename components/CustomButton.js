@@ -1,10 +1,6 @@
 import React from 'react';
 import { Button } from 'react-native-elements';
 
-const handleOnPress = () => {
-    console.log("Button was pressed")
-}
-
 export const ButtonType = {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
@@ -19,7 +15,6 @@ export default function CustomButton({ title, type, onPress }) {
         <Button 
             title={title} 
             onPress={onPress}
-            //onPress={onPress => handleOnPress()}
             buttonStyle={buttonStyle}
             titleStyle={titleStyle}
         />
@@ -28,20 +23,15 @@ export default function CustomButton({ title, type, onPress }) {
 
 const styles = {
     primaryButton: {
-	    backgroundColor: '#2972FF',
-        borderRadius: 24,
-        height: 56
-           
+			// insert styles
     },
     primaryTitle: {
-        color: '#FFFFFF',
+			// insert styles
     },
     secondaryButton: {
-        backgroundColor: '#E9F0FF',
-        borderRadius: 24,
-        height: 56
+			// insert styles
     },
     secondaryTitle: {
-        color: '#2972FF',
+			// insert styles
     },
 };
