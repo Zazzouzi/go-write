@@ -4,9 +4,22 @@ import { Button } from "react-native-elements";
 import CustomButton, { ButtonType } from "../components/CustomButton";
 
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
+            <View style = {styles.topContainer}>
+               <Image
+                   style={styles.image}//https://i.ibb.co/Ct3g53j/dis-image.png
+                   source={{ uri: "https://i.ibb.co/Ct3g53j/dis-image.png" }}
+                   resizeMode="contain"
+               />
+               <Text style = {styles.text}> Go Write </Text> 
+           </View>
+
+           <View style = {styles.buttonContainer}>
+               <CustomButton title="New Journal" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate('Name')} />
+               <CustomButton title="Access Journal" type = {ButtonType.SECONDARY} onPress= {() => navigation.navigate('Journal')} />
+           </View>
         </SafeAreaView>
     );
 }
@@ -17,6 +30,7 @@ const styles = StyleSheet.create({
         backgroundcolor: 'white',
         alignItems: 'center',
         justifyContent: "space-between",
+        padding: 10,
       },
       topContainer: {
         alignItems: 'center',
@@ -26,13 +40,14 @@ const styles = StyleSheet.create({
         height: 200,
       },
       text: {
-        fontsize: 24,
+        fontSize: 24,
         color: 'red',
-        fontweight: 'bold',
+        fontWeight: 'bold',
         textTransform: 'uppercase',
+        marginTop: 45,
       },
       buttonContainer: {
-        paddignHorizonatal: 16,
+        paddingHorizonatal: 16,
         height: 126,
         width: '100%',
         justifyContent: "space-between",
@@ -40,3 +55,4 @@ const styles = StyleSheet.create({
      
   
 });
+
