@@ -37,9 +37,18 @@ const styles = {
     marginLeft: 10,
   },
   secondaryButton: {
-    // insert styles
+    width: 350,
+    height: 475,
+    backgroundColor: "#F6EAD3",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    marginRight: 25,
   },
   secondaryTitle: {
-    // insert styles
+    color: "#A58E72",
+    fontWeight: "bold",
+    fontSize: 30,
   },
 };

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    height: 200,
+    marginTop: 45,
   },
   image: {
     width: 90,

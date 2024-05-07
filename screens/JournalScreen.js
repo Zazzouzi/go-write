@@ -1,91 +1,119 @@
 import React from "react";
-import { View, Text, ScrollView, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+} from "react-native";
 import CustomButton, { ButtonType } from "../components/CustomButton";
+import logoImage from "../assets/logo.png";
 
 export default function JournalScreen({ navigation }) {
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.topContainer}>
-                <Text style={styles.text}>
-                    Journal Entries of This Week
-                </Text>
-                <Text style={styles.subtitle}>
-                    Table Contents
-                </Text>
-            </View>
-      
-            <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.scrollViewContainer}
-            >
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Sunday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Sunday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Monday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Monday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Tuesday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Tuesday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Wednesday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Wednesday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Thursday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Thursday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Friday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Friday")} />
-                </View>
-                <View style={styles.buttonSpacer}>
-                    <CustomButton title="Saturday" type={ButtonType.PRIMARY} onPress={() => navigation.navigate("Saturday")} />
-                </View>
-            </ScrollView>
-        </SafeAreaView>
-    );
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topContainer}>
+        <Image style={styles.image} source={logoImage} resizeMode="contain" />
+        <Text style={styles.text}> GoWrite </Text>
+      </View>
+
+      <View style={styles.topContainer}>
+        <Text style={styles.subtitle}>Journals This Week</Text>
+      </View>
+
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.scrollViewContainer}
+      >
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Sunday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Sunday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Monday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Monday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Tuesday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Tuesday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Wednesday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Wednesday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Thursday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Thursday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Friday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Friday")}
+          />
+        </View>
+        <View style={styles.buttonSpacer}>
+          <CustomButton
+            title="Saturday"
+            type={ButtonType.SECONDARY}
+            onPress={() => navigation.navigate("Saturday")}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 const styles = StyleSheet.create({
   text: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: '#191259',
-    marginBottom: 16,
-    alignSelf: 'center',
+    fontSize: 50,
+    color: "#F6EAD3",
+    fontWeight: "bold",
+    marginLeft: 10,
   },
   subtitle: {
     fontSize: 20,
-    color: '#656565',
-    paddingBottom: 16,
-    alignSelf: 'center',
+    fontWeight: "bold",
+    color: "#F6EAD3",
   },
   container: {
     flex: 1,
+    backgroundColor: "#CFA75B",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 10,
-    backgroundColor: "#FFFFFF",
-    justifyContent: 'space-between',
   },
   topContainer: {
-    alignitems: 'center',
-    padding: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 45,
   },
-  input: {
-    fontSize: 20, 
-    padding: 16, 
-    borderColor: "#BBBBBB",
-    borderRadius: 8,
+  image: {
+    width: 90,
+    height: 90,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
   },
-  input1:{
-    height: 66,
-    fontsize: 20, 
-    fontWeight: 'bold',
-    padding: 10,
-    borderRadius: 8,
+  scrollViewContainer: {
+    marginTop: 15,
+    paddingHorizontal: 20,
   },
-  buttonContainer: {
-    width: '100%',
-    paddingHorizontal: 16,
-    marginBottom: 16,
-    color: 'red'
-  },
-
 });
