@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
 import CustomButton, { ButtonType } from "../components/CustomButton";
 
 
-export default function JournalScreen() {
+export default function JournalScreen({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
           <View style = {styles.topContainer}>
@@ -16,25 +16,25 @@ export default function JournalScreen() {
           </View>
       
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Sunday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("SundayEntry")} />
+          <CustomButton title="Sunday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Sunday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Monday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("MondayEntry")} />
+          <CustomButton title="Monday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Monday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Tuesday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("TuesdayEntry")} />
+          <CustomButton title="Tuesday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Tuesday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Wednesday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("WednesdayEntry")} />
+          <CustomButton title="Wednesday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Wednesday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Thursday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("ThursdayEntry")} />
+          <CustomButton title="Thursday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Thursday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Friday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("FridayEntry")} />
+          <CustomButton title="Friday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Friday")} />
       </View>
       <View style = {styles.buttonContainer}>
-          <CustomButton title="Saturday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("SaturdayEntry")} />
+          <CustomButton title="Saturday" type = {ButtonType.PRIMARY} onPress= {() => navigation.navigate("Saturday")} />
       </View>
     </SafeAreaView>
   );

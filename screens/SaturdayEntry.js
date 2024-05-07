@@ -1,13 +1,15 @@
-import React from "react";
-import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, StyleSheet, SafeAreaView, TextInput} from "react-native";
 
 export default function SaturdayEntry() {
+  const [notes, setNotes] = useState("");
     return (
         <SafeAreaView style={styles.container}>
           <View style = {styles.topContainer}>
           <Text style = {styles.text}>
-            What is a message you want to give to your future self?
+          What is a message you want to give to your future self?
           </Text>
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
           </View>
       
       
@@ -32,5 +34,10 @@ const styles = StyleSheet.create({
     alignitems: 'center',
     padding: 16,
   },
-  
+  input: {
+    fontSize: 20, 
+    padding: 16, 
+    borderColor: "#BBBBBB",
+    borderRadius: 8,
+  },
 });
