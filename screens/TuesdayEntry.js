@@ -9,7 +9,8 @@ export default function TuesdayEntry() {
           <Text style = {styles.text}>
           Describe a book or movie that changed your perspective on life
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       

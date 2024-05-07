@@ -9,7 +9,8 @@ export default function ThursdayEntry() {
           <Text style = {styles.text}>
           What do you need to let go of?
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       

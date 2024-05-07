@@ -9,7 +9,8 @@ export default function SaturdayEntry() {
           <Text style = {styles.text}>
           What is a message you want to give to your future self?
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       

@@ -11,7 +11,8 @@ export default function SundayEntry() {
           <Text style = {styles.text}>
             Write a letter to someone you hate or admire
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       

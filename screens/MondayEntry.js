@@ -9,7 +9,11 @@ export default function MondayEntry() {
           <Text style = {styles.text}>
             How do you want this week to go?
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" 
+          value = {notes} 
+          onChangeText = {setNotes} 
+          multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       

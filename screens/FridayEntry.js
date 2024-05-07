@@ -9,7 +9,8 @@ export default function FridayEntry() {
           <Text style = {styles.text}>
           Did you witness something beautiful today?
           </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} />
+          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
+          numberOfLines={50}/>
           </View>
       
       
