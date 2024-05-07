@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#191259',
+    color: '#F6EAD3',
     marginBottom: 16,
   },
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "FFFFFF",
+    backgroundColor: "#CFA75B",
     justifyContent: 'space-between',
   },
   topContainer: {
@@ -41,16 +41,10 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 20, 
     padding: 16, 
-    borderColor: "#BBBBBB",
+    borderColor: "#705E48",
     borderRadius: 8,
   },
-  input1:{
-    height: 66,
-    fontsize: 20, 
-    fontWeight: 'bold',
-    padding: 10,
-    borderRadius: 8,
-  },
+  
   buttonContainer: {
     width: '100%',
     paddingHorizontal: 16,

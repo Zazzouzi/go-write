@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView, TextInput} from "react-native";
+import CustomButton from "../components/CustomButton";
 
-export default function ThursdayEntry() {
+export default function ThursdayEntry({navigation}) {
   const [notes, setNotes] = useState("");
     return (
         <SafeAreaView style={styles.container}>
@@ -13,7 +14,9 @@ export default function ThursdayEntry() {
           numberOfLines={50}/>
           </View>
       
-      
+          <View style = {styles.buttonContainer}>
+          <CustomButton title="Done" type = 'primary' onPress= {() => navigation.navigate("Journal")} />
+          </View>
     </SafeAreaView>
   );
 }
@@ -40,6 +43,10 @@ const styles = StyleSheet.create({
     padding: 16, 
     borderColor: "#BBBBBB",
     borderRadius: 8,
+  },
+  buttonContainer: {
+    width: '100%',
+    paddingHorizontal: 16,
   },
 });
 
