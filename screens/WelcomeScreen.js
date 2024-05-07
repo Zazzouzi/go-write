@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
   image: {
     width: 90,
     height: 90,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
   },
   text: {
     fontSize: 50,
@@ -53,9 +56,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   buttonContainer: {
-    paddingHorizonatal: 16,
-    height: 126,
+    height: 120,
     width: "100%",
     justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 45,
   },
 });
