@@ -1,26 +1,64 @@
-import React, { useState } from "react";
-import { View, Text, Image, StyleSheet, SafeAreaView, TextInput} from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, SafeAreaView, TextInput, Keyboard, TouchableWithoutFeedback } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from "../components/CustomButton";
 
 export default function TuesdayEntry({navigation}) {
   const [notes, setNotes] = useState("");
-    return (
-        <SafeAreaView style={styles.container}>
-          <View style = {styles.topContainer}>
-          <Text style = {styles.text}>
-          Describe a book or movie that changed your perspective on life
-          </Text>
-          <TextInput style = {styles.input} placeholder = "Write your thoughts" value = {notes} onChangeText = {setNotes} multiline = {true}
-          numberOfLines={50}/>
-          </View>
-      
-          <View style = {styles.buttonContainer}>
-          <CustomButton title="Done" type = 'primary' onPress= {() => navigation.navigate("Journal")} />
-          </View>
 
-    </SafeAreaView>
+  // Function to save notes to AsyncStorage
+  const saveNotes = async () => {
+    try {
+      await AsyncStorage.setItem('tuesdayNotes', notes);
+      console.log('Notes saved successfully!');
+      navigation.navigate("Journal"); // Navigate after saving
+    } catch (e) {
+      console.error('Failed to save notes:', e);
+    }
+  };
+
+  // Function to load notes from AsyncStorage
+  const loadNotes = async () => {
+    try {
+      const savedNotes = await AsyncStorage.getItem('tuesdayNotes');
+      if (savedNotes !== null) {
+        setNotes(savedNotes);
+      }
+    } catch (e) {
+      console.error('Failed to load notes:', e);
+    }
+  };
+
+  // UseEffect to load notes when the component mounts
+  useEffect(() => {
+    loadNotes();
+  }, []);
+
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.topContainer}>
+          <Text style={styles.text}>
+            Describe a book or movie that changed your perspective on life
+          </Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Write your thoughts"
+            value={notes}
+            onChangeText={setNotes}
+            multiline={true}
+            numberOfLines={50}
+          />
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <CustomButton title="Done" type='primary' onPress={saveNotes} />
+        </View>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 }
+
 
 const styles = StyleSheet.create({
   text: {
