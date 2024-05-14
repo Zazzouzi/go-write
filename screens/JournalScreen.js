@@ -5,13 +5,16 @@ import {
   ScrollView,
   StyleSheet,
   SafeAreaView,
-  Image,
+  Image, 
+  Keyboard, 
+  TouchableWithoutFeedback,
 } from "react-native";
 import CustomButton, { ButtonType } from "../components/CustomButton";
 import logoImage from "../assets/logo.png";
 
 export default function JournalScreen({ navigation }) {
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <SafeAreaView style={styles.container}>
       <View style={styles.topContainer}>
         <Image style={styles.image} source={logoImage} resizeMode="contain" />
@@ -78,6 +81,8 @@ export default function JournalScreen({ navigation }) {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </TouchableWithoutFeedback>
+    
   );
 }
 const styles = StyleSheet.create({
